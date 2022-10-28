@@ -91,22 +91,22 @@
 #define add_ssaaaa(sh, sl, ah, al, bh, bl) \
   __asm__ ("addl %5,%1\n"	\
 "	adcl %3,%0"		\
-       : "=r" ((unsigned long int)(sh)), "=&r" ((unsigned long int)(sl))\
+       : "=r" (sh), "=&r" (sl)	\
        : "%0" ((unsigned long int)(ah)), "g" ((unsigned long int)(bh)),	\
 	 "%1" ((unsigned long int)(al)), "g" ((unsigned long int)(bl)))
 #define sub_ddmmss(sh, sl, ah, al, bh, bl) \
   __asm__ ("subl %5,%1\n"	\
 "	sbbl %3,%0"		\
-       : "=r" ((unsigned long int)(sh)), "=&r" ((unsigned long int)(sl))\
+       : "=r" (sh), "=&r" (sl)	\
        : "0" ((unsigned long int)(ah)), "g" ((unsigned long int)(bh)),	\
 	 "1" ((unsigned long int)(al)), "g" ((unsigned long int)(bl)))
 #define umul_ppmm(w1, w0, u, v) \
   __asm__ ("mull %3"							\
-	: "=a" ((unsigned long int)(w0)), "=d" ((unsigned long int)(w1))\
+	: "=a" (w0), "=d" (w1)	\
 	: "%0" ((unsigned long int)(u)), "rm" ((unsigned long int)(v)))
 #define udiv_qrnnd(q, r, n1, n0, d) \
   __asm__ ("divl %4"							\
-	: "=a" ((unsigned long int)(q)), "=d" ((unsigned long int)(r))	\
+	: "=a" (q), "=d" (r)	\
 	: "0" ((unsigned long int)(n0)), "1" ((unsigned long int)(n1)),	\
 	  "rm" ((unsigned long int)(d)))
 #if 0
